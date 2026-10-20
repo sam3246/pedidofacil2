@@ -6,6 +6,7 @@ class producto(models.Model):
     precio = models.PositiveIntegerField()
     stock = models.PositiveIntegerField()
     fecha = models.DateTimeField(auto_now_add=True)
+    test = models.CharField(max_length=100, default= "sin datos")
 
     def __str__(self):
         return self.nombre
