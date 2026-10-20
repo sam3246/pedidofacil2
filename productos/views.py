@@ -9,6 +9,7 @@ def crear(request):
             precio = request.POST["precio"],
             stock = request.POST["stock"],
             fecha = request.POST["fecha"]
+            test = request.POST["test"]
         )
         Producto.save()
     return render(request, "formulario.html")
