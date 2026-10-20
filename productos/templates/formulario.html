@@ -161,6 +161,11 @@
             <input type="date" class="fecha" id="fecha" name="fecha" value="{{ Producto.fecha|default:'' }}" required autocomplete="off">
         </div>
 
+        <div class="form-group">
+            <label for="descripcion">Test</label>
+            <input type="text" id="test" name="test" value="{{ Producto.test|default:'' }}" required autocomplete="off">
+        </div>
+
         <button type="submit" class="btn-submit">Guardar</button>
         <a href="/productos/lista/" class="back-link">Cancelar y volver</a>
     </form>
