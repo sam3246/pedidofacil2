@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedidos</title>
+```html
 <style>
     * {
         box-sizing: border-box;
     }
 
     body {
-        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-        background: #f1f5f9;
-        color: #1e293b;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f0fa;
+        color: #302641;
         margin: 0;
         padding: 40px 16px;
         min-height: 100vh;
@@ -30,6 +31,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         gap: 12px;
         margin-bottom: 24px;
     }
@@ -37,14 +39,14 @@
     h1 {
         margin: 0;
         font-size: 1.8rem;
-        color: #0f172a;
+        color: #56358c;
     }
 
     .btn {
         display: inline-block;
-        padding: 10px 20px;
-        font-size: 0.95rem;
-        font-weight: 600;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+        font-weight: bold;
         border-radius: 8px;
         text-decoration: none;
         transition: background 0.2s, transform 0.1s;
@@ -52,11 +54,20 @@
 
     .btn-primary {
         color: #ffffff;
-        background: #3b82f6;
+        background: #7546ad;
     }
 
     .btn-primary:hover {
-        background: #2563eb;
+        background: #5d328f;
+    }
+
+    .btn-danger {
+        color: #ffffff;
+        background: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background: #b02a37;
     }
 
     .btn:active {
@@ -65,54 +76,61 @@
 
     .card {
         background: #ffffff;
-        padding: 20px 24px;
+        padding: 22px 24px;
         margin-bottom: 16px;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+        border: 1px solid #e5dcf2;
+        border-radius: 14px;
+        box-shadow: 0 6px 22px rgba(75, 45, 120, 0.08);
         transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+        box-shadow: 0 8px 24px rgba(75, 45, 120, 0.13);
     }
 
     .card h3 {
-        margin: 0 0 6px;
+        margin: 0 0 12px;
         font-size: 1.2rem;
-        color: #0f172a;
+        color: #56358c;
     }
 
     .card p {
-        margin: 0;
+        margin: 7px 0;
         font-size: 0.95rem;
         line-height: 1.5;
-        color: #64748b;
+        color: #79658f;
         word-break: break-word;
+    }
+
+    .card p strong {
+        color: #624b80;
     }
 
     .actions {
         display: flex;
+        flex-wrap: wrap;
         gap: 8px;
         margin-top: 16px;
         padding-top: 14px;
-        border-top: 1px solid #e2e8f0;
+        border-top: 1px solid #e5dcf2;
     }
 
     .actions a {
-        padding: 6px 14px;
+        display: inline-block;
+        padding: 7px 14px;
         font-size: 0.85rem;
-        font-weight: 600;
-        color: #3b82f6;
-        background: #eff6ff;
+        font-weight: bold;
+        color: #624b80;
+        background: #f0e9fa;
         border-radius: 6px;
         text-decoration: none;
         transition: background 0.2s, color 0.2s;
     }
 
     .actions a:hover {
-        background: #dbeafe;
-        color: #2563eb;
+        background: #e2d4f4;
+        color: #56358c;
     }
 
     .actions a.delete {
@@ -130,32 +148,54 @@
         padding: 48px 24px;
         text-align: center;
         background: #ffffff;
-        border: 2px dashed #cbd5e1;
-        border-radius: 12px;
+        border: 2px dashed #d6c9e8;
+        border-radius: 14px;
     }
 
     .empty-state p {
         margin: 0;
         font-size: 1rem;
-        color: #64748b;
+        color: #79658f;
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 700px) {
+        body {
+            padding: 25px 12px;
+        }
+
         .header {
             flex-direction: column;
             align-items: stretch;
             text-align: center;
         }
 
-        .btn-primary {
+        .header h1 {
+            margin-bottom: 8px;
+        }
+
+        .header .btn {
             text-align: center;
+            margin-left: 0 !important;
         }
 
         .card {
             padding: 18px;
         }
     }
+
+    @media (max-width: 400px) {
+        .actions {
+            flex-direction: column;
+        }
+
+        .actions a,
+        .actions a.delete {
+            margin-left: 0;
+            text-align: center;
+        }
+    }
 </style>
+```
 </head>
 <body>
 
